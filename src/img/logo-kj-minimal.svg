@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="64" viewBox="0 0 250 64" role="img" aria-labelledby="title desc">
+  <title id="title">KJ Webdesign Logo</title>
+  <desc id="desc">KJ Initialen-Logo im eleganten Grün-Beige-Stil</desc>
+  <rect x="8" y="8" width="48" height="48" rx="16" fill="#173d2b"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#f6f2eb">KJ</text>
+  <text x="72" y="39" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#101713">Webdesign</text>
+</svg>

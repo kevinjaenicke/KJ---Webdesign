@@ -1,0 +1,1459 @@
+/* *========== Schrift ========== */
+
+@import url("./fonts.css");
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Fraunces", Georgia, serif;
+}
+
+/* *========= Global ========= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* *========= Generelles ========== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.haekchen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--mini-icons);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.heading-pat {
+    color: var(--headings);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* *========== Farbe ========== */
+
+:root {
+    --primare-color: #153349;
+    --nav-transparent: #153349f9;
+    --selectoren-background: #2c7fba2d;
+    --card-shadow: #1533492f;
+    --headings: #003b66;
+    --mini-icons: #00518a;
+    --card-border-color: #326b4926;
+}
+
+
+
+/* *========== Navigations-Bereich ========== */
+
+.nav-leiste {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    background-color: var(--nav-transparent);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-logo {
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-logo>img {
+    height: 60px;
+}
+
+.nav-container>ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-container>ul>li {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav-card {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-card>a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#active {
+    /* border-bottom: 2px solid #153349; */
+    background-color: #269ef4;
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px #269ef4;
+
+}
+
+/* *=== Media Queries === */
+
+@media (max-width: 855px) {
+    .nav-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-logo>img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 780px) {
+    .nav-leiste {
+        height: 120px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 604px) {
+    .nav-container>ul {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 541px) {
+    .nav-leiste {
+        position: static;
+        z-index: 1000;
+        height: 360px;
+        background-color: var(--nav-transparent);
+    }
+
+    .nav-container {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .nav-container>ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        padding: 0;
+    }
+
+    .nav-logo>img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav-logo>img {
+        height: 50px;
+    }
+}
+
+/* *========== Header-Bereich ========== */
+
+#hero {
+    height: 600px;
+    padding: 2rem;
+    background-image: url(../img/header-background-blue.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+#header-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+#header-card {
+    padding: .5rem;
+}
+
+#header-card>div {
+    width: 70%;
+}
+
+#header-card>div>h1 {
+    font-size: 3.5rem;
+}
+
+#header-card>div>h1>span {
+    color: var(--headings);
+}
+
+#header-card>div>p {
+    font-size: 1.2rem;
+}
+
+#header-vorteile>p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem !important;
+    margin: 0;
+}
+
+#header-img {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#header-img>img {
+    height: 536px;
+}
+
+@media (max-width: 1293px) {
+    #header-card>div>h1 {
+        font-size: 3rem;
+    }
+
+    #header-card>div>p {
+        font-size: 1rem;
+    }
+
+    #header-vorteile>p {
+        font-size: 1rem !important;
+    }
+
+    #header-img>img {
+        height: 450px;
+    }
+}
+
+/* *=== Media Queries === */
+
+@media (max-width: 1093px) {
+    #header-img>img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 997px) {
+    #hero {
+        height: 400px;
+    }
+
+    #header-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #header-img {
+        display: none;
+    }
+
+    #header-card>div {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    #header-vorteile>p {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 702px) {
+    #header-card {
+        padding-bottom: 1rem;
+    }
+
+    #header-vorteile {
+        display: none;
+    }
+}
+
+@media (max-width: 660px) {
+    #header-card>div>h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #header-card>div>h1 {
+        font-size: 2rem;
+    }
+}
+
+/* *========== Leistungen-Index ========== */
+
+#leistungen-index {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+/* *=== Ueberschrift ===*/
+
+#leistungen-ueberschrift>h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--headings);
+
+}
+
+/* *======================= */
+
+#leistungen-index-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 35px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.leistungen-index-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    padding: 1rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 16px;
+    box-shadow: 4px 16px 10px var(--card-shadow);
+}
+
+.leistungen-index-logo>img {
+    width: 60px;
+    height: 60px;
+}
+
+
+.leistungen-index-content>h3 {
+    color: var(--headings);
+
+}
+
+@media (max-width: 1500px) {
+    #leistungen-index-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 935px) {
+    #leistungen-index-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 553px) {
+    #leistungen-index-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* *========== Ablauf ========== */
+
+#ablauf {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 3rem;
+    width: 95%;
+    margin: 0 auto;
+    background-color: var(--selectoren-background);
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+
+/* *=== Ueberschrift === */
+
+#ablauf-ueberschrift>h2 {
+    color: var(--headings);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+/* *==================== */
+
+#ablauf-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+    gap: 35px;
+}
+
+.ablauf-content>h3 {
+    color: var(--headings);
+}
+
+/* *=== Cards === */
+
+.ablauf-card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #326b4926;
+    border-radius: 16px;
+    box-shadow: 4px 16px 10px var(--card-shadow);
+    margin: 0 auto;
+}
+
+.ablauf-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.ablauf-icon>span {
+    position: absolute;
+    top: -6px;
+    left: calc(55% - 50px);
+    width: 20px;
+    height: 20px;
+    background-color: var(--mini-icons);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ablauf-icon>img {
+    display: flex;
+
+    width: 60px;
+    background-color: var(--selectoren-background);
+    border-radius: 50%;
+    padding: .5rem;
+    object-fit: contain;
+
+
+}
+
+/* *=== Arrow === */
+
+.ablauf-pfeil-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ablauf-pfeil-icon>img {
+    width: 50px;
+}
+
+/* *=== Media Queries === */
+@media (max-width: 1500px) {
+    #ablauf-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ablauf-pfeil-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1014px) {
+    #ablauf-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 536px) {
+    #ablauf-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0.5rem;
+    }
+}
+
+/* *========== Ueber mich ========== */
+
+/* *=== GRID === */
+
+#ueber-mich {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .4rem;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+#profil-img {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    padding: 1rem;
+    border-radius: 16px;
+    margin: 0 auto;
+}
+
+#ueber-mich-container {
+    grid-column: 3 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 16px;
+}
+
+#ueber-mich-staerken-container {
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* *=== Einleitung ===  */
+
+
+#ueber-mich-einleitung {
+    width: 70%;
+}
+
+#ueber-mich-einleitung>h2 {
+    color: var(--headings);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+#ueber-mich-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: var(--selectoren-background);
+    padding: 1rem;
+    border-radius: 16px;
+}
+
+.ueber-mich-card {
+    display: flex;
+    border-right: 1px solid;
+    text-align: center;
+    padding: 0 1.2rem;
+}
+
+
+.ueber-mich-card:last-child {
+    border-right: 0;
+    padding: .5rem;
+}
+
+.ueber-mich-icon {
+    display: flex;
+    align-items: center;
+}
+
+.ueber-mich-icon>img {
+    width: 50px;
+    height: 50px;
+}
+
+.ueber-mich-card>div>h3 {
+    color: var(--headings);
+}
+
+/* *=== Profil-Bild === */
+
+#profil-img>img {
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* *=== Ueber-mich-staerken === */
+
+#ueber-mich-staerken-container {
+    justify-items: center;
+    background-color: var(--selectoren-background);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.ueber-mich-staerken-card {
+    display: flex;
+    align-items: center;
+}
+
+.ueber-mich-staerken-content {
+    border-right: 1px solid;
+    padding: .5rem;
+}
+
+.ueber-mich-staerken-card:last-child .ueber-mich-staerken-content {
+    border-right: 0;
+}
+
+.ueber-mich-staerken-content>h3 {
+    color: var(--headings);
+}
+
+.ueber-mich-staerken-img {
+    padding: .5rem;
+}
+
+.ueber-mich-staerken-img>img {
+    width: 60px;
+}
+
+@media (max-width: 1500px) {
+    #ueber-mich-einleitung {
+        width: 90%;
+    }
+
+    .ueber-mich-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1110px) {
+    #ueber-mich-einleitung {
+        width: 100%;
+    }
+
+    #ueber-mich-einleitung>p {
+        font-size: .94rem;
+    }
+
+    .ueber-mich-card>div>h3 {
+        font-size: 1rem;
+    }
+
+    .ueber-mich-card>div>p {
+        font-size: .9rem;
+    }
+
+    .ueber-mich-staerken-img {
+        display: none;
+    }
+
+    .ueber-mich-staerken-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    #ueber-mich-container {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+
+    #ueber-mich-einleitung {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        width: 80%;
+    }
+
+    #ueber-mich-einleitung>p {
+        font-size: 1rem;
+    }
+
+    .ueber-mich-card>div>h3 {
+        font-size: 1.2rem;
+    }
+
+    .ueber-mich-card>div>p {
+        font-size: 1rem;
+    }
+
+    #profil-img {
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    #ueber-mich-staerken-container {
+        grid-template-columns: repeat(2, 1fr);
+        background-color: white;
+
+    }
+
+    .ueber-mich-staerken-card {
+        width: 300px;
+        background-color: var(--selectoren-background);
+        border-radius: 16px;
+    }
+
+    .ueber-mich-staerken-content {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 666px) {
+    #ueber-mich-staerken-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 666px) {
+    #ueber-mich-content {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+    .ueber-mich-card {
+        display: flex;
+        background-color: var(--selectoren-background);
+        justify-content: center;
+        border-radius: 16px;
+        width: 50%;
+        margin: 0 auto;
+        border: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .ueber-mich-card {
+        width: 70%;
+    }
+}
+
+@media (max-width: 340px) {
+    #ueber-mich-staerken-container {
+        padding: 1rem .3rem 1rem .3rem;
+    }
+}
+
+
+/* *========== FOOTER ========== */
+
+.footer {
+    background: #789ac4;
+    background: linear-gradient(61deg, rgba(120, 154, 196, 1) 0%, rgba(21, 51, 73, 1) 99%);
+    min-height: 200px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: 0 auto;
+}
+
+/* *=== Logo === */
+
+.footer-logo-card {
+    width: 15%;
+}
+
+.footer-logo>img {
+    height: 60px;
+}
+
+.footer-logo>p {
+    padding-left: 0.5rem;
+    margin-top: 0;
+}
+
+/* *=== Kontakt === */
+
+.footer-kontakt-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-kontakt-card>a {
+    color: #000000;
+    text-decoration: none;
+    padding-bottom: .7rem;
+}
+
+/* *=== Links === */
+
+.footer-links-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links-card>a {
+    padding-bottom: .4rem;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* *===Rechtliches === */
+
+.footer-rechtliches-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-rechtliches-card>a {
+    color: #000000;
+    text-decoration: none;
+    padding-bottom: .7rem;
+}
+
+@media (max-width: 1271px) {
+    .footer-logo-card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 720px) {
+    .footer-logo>img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .footer-kontakt-card,
+    .footer-links-card,
+    .footer-rechtliches-card,
+    .footer-logo-card {
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 380px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .footer-logo-card {
+        display: flex;
+        width: auto;
+    }
+
+    .footer-logo>img {
+        height: 60px;
+    }
+
+    .footer-kontakt-card,
+    .footer-links-card,
+    .footer-rechtliches-card,
+    .footer-logo-card {
+        padding-right: 0;
+    }
+}
+
+
+/* *==================================================================================================== */
+
+/* *========= Ueber-mich-seite =========== */
+
+#ueber-mich-page {
+    margin: 2rem 0;
+}
+
+#ueber-mich-page-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#ueber-mich-page-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#ueber-mich-page-content>h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    width: 75%;
+}
+
+#ueber-mich-page-content>p {
+    width: 60%;
+}
+
+#ueber-mich-page-vorteile {
+    display: flex;
+    gap: 50px;
+}
+
+#ueber-mich-page-vorteile>p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    background-color: var(--selectoren-background);
+    border-radius: 16px;
+    padding: .2rem .6rem;
+}
+
+#ueber-mich-page-vorteile>p>span {
+    line-height: 0;
+}
+
+
+#ueber-mich-page-img-card>img {
+    width: 600px;
+    height: 400px;
+    border-radius: 16px;
+}
+
+@media (max-width: 1200px) {
+    #ueber-mich-page-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #ueber-mich-page-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        text-align: center;
+        width: 70%;
+    }
+
+    #ueber-mich-page-content>h1 {
+        width: 100%;
+        font-size: 2.4rem;
+    }
+
+    #ueber-mich-page-content>p {
+        width: 100%;
+    }
+
+    #ueber-mich-page-vorteile {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #ueber-mich-page-img-card>img {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 542px) {
+    #ueber-mich-page-vorteile {
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #ueber-mich-page-vorteile>p {
+        justify-content: center;
+    }
+
+    #ueber-mich-page-content>h1 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* *========== Story ========== */
+
+#story {
+    background-color: var(--selectoren-background);
+    padding: 2rem 0;
+}
+
+#story-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#story-einleitung {
+    width: 30%;
+}
+
+#story-einleitung>h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    width: 75%;
+}
+
+#story-einleitung>p {
+    width: 90%;
+}
+
+#story-line-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    margin: 0 auto;
+    width: 70%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+.story-line-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 350px;
+    border-radius: 1rem;
+}
+
+.story-line-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--selectoren-background);
+}
+
+.story-line-img>img {
+    width: 60px;
+}
+
+@media (max-width: 1423px) {
+    #story-line-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .story-line-card {
+        height: auto;
+    }
+}
+
+@media (max-width: 1341px) {
+    #story-container {
+        flex-direction: column;
+    }
+
+    #story-line-container {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+    }
+
+    #story-container {
+        text-align: center;
+    }
+
+    #story-einleitung {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+
+    #story-einleitung>h2 {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #story-einleitung>p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    #story-line-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+    }
+}
+
+@media (max-width: 542px) {
+    #story-einleitung {
+        width: 70%;
+    }
+
+    #story-einleitung>h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #story-line-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+/* *========== So-arbeite-ich ========== */
+
+#how-i-works {
+    margin: 0 auto;
+    width: 95%;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#how-i-works-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    justify-items: center;
+    gap: 3rem;
+}
+
+.how-i-works-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 260px;
+    height: 350px;
+    background-color: var(--selectoren-background);
+    border-radius: 16px;
+}
+
+.how-i-works-img {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: #FFF;
+    border-radius: 50%;
+}
+
+.how-i-works-img>img {
+    width: 60px;
+}
+
+@media (max-width: 1120px) {
+    #how-i-works-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    #how-i-works-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* *========== Meine-Tools ========== */
+
+#my-tools {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+
+    background-color: var(--selectoren-background);
+}
+
+#my-tools-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+#my-tools-heading>h2 {
+    display: flex;
+    margin: 0;
+}
+
+#my-tools-heading>p {
+    display: flex;
+    width: 75%;
+}
+
+#my-tools-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    padding: 2rem 0;
+}
+
+#my-tools-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.my-tools-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: .7rem;
+    width: 300px;
+    padding: .1rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 16px;
+    box-shadow: 4px 16px 10px var(--card-shadow);
+}
+
+.my-tools-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-tools-img>img {
+    width: 60px;
+}
+
+
+/* *======================================================================================= */
+
+/* * ========== Leistungen-Page ========== */
+
+/* *========== Header-Bereich ========== */
+
+#leistungen-page-hero {
+    height: 600px;
+    padding: 2rem;
+    background-image: url(../img/header-background-blue.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+#leistungen-page-header-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+#leistungen-page-header-card {
+    padding: .5rem;
+}
+
+#leistungen-page-header-card>div {
+    width: 70%;
+}
+
+#leistungen-page-header-card>div>h1 {
+    font-size: 3.5rem;
+}
+
+#leistungen-page-header-card>div>h1>span {
+    color: var(--headings);
+}
+
+#leistungen-page-header-card>div>p {
+    font-size: 1.2rem;
+}
+
+#leistungen-page-header-vorteile>p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem !important;
+    margin: 0;
+}
+
+#leistungen-page-header-img {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#leistungen-page-header-img>img {
+    height: 536px;
+}
+
+@media (max-width: 1293px) {
+    #leistungen-page-header-card>div>h1 {
+        font-size: 3rem;
+    }
+
+    #leistungen-page-header-card>div>p {
+        font-size: 1rem;
+    }
+
+    #leistungen-page-header-vorteile>p {
+        font-size: 1rem !important;
+    }
+
+    #leistungen-page-header-img>img {
+        height: 450px;
+    }
+}
+
+/* *=== Media Queries === */
+
+@media (max-width: 1093px) {
+    #leistungen-page-header-img>img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 997px) {
+    #leistungen-page-hero {
+        height: 400px;
+    }
+
+    #leistungen-page-header-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #leistungen-page-header-img {
+        display: none;
+    }
+
+    #leistungen-page-header-card>div {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    #leistungen-page-header-vorteile>p {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 702px) {
+    #leistungen-page-header-card {
+        padding-bottom: 1rem;
+    }
+
+    #leistungen-page-header-vorteile {
+        display: none;
+    }
+}
+
+@media (max-width: 660px) {
+    #leistungen-page-header-card>div>h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #leistungen-page-header-card>div>h1 {
+        font-size: 2rem;
+    }
+}
+
+/* *========== Meine Leistungen ========== */
+
+#meine-leistungen {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--selectoren-background);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#meine-leistungen-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.meine-leistungen-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 1rem;
+}
+
+.meine-leistungen-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--selectoren-background);
+}
+
+.meine-leistungen-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0 1rem;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#meine-leistungen-heading {
+    width: 50%;
+}
+
+#meine-leistungen-heading>h2 {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    #meine-leistungen-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 470px) {
+    .meine-leistungen-card {
+    flex-direction: column;
+}
+.meine-leistungen-content {
+    text-align: center;
+    width: 100%;
+}
+}
