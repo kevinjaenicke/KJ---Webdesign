@@ -1733,4 +1733,10 @@ body {
     #preise-card-beliebt {
         bottom: 0;
     }
+    #preise-heading {
+    margin: 0 auto;
+}
+    #preise-heading>h2 {
+    margin: 0;
+}
 }
