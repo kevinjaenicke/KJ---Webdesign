@@ -50,16 +50,109 @@ body {
     font-weight: bold;
 }
 
+.text-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    color: var(--svg-color);
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.text-small-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    color: var(--svg-color);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* *=== */
+
+.version-icon {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    color: var(--icon-color);
+}
+
+.version-icon::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    width: 2px;
+    height: 32px;
+    background-color: currentColor;
+    border-radius: 999px;
+}
+
+.version-icon::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 30px;
+    width: 20px;
+    height: 16px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    border-radius: 0 10px 0 0;
+}
+
+.version-icon .dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+.version-icon .dot-top {
+    left: 16px;
+    top: 10px;
+}
+
+.version-icon .dot-middle {
+    left: 16px;
+    top: 28px;
+}
+
+.version-icon .dot-bottom {
+    left: 38px;
+    top: 43px;
+}
+
+/* *========== Karten-Schatten ========== */
+
+.card-shadow {
+    border: 1px solid var(--card-border-color);
+    box-shadow: 4px 16px 10px var(--card-shadow);
+}
+
 /* *========== Farbe ========== */
 
 :root {
     --primare-color: #153349;
-    --nav-transparent: #153349f9;
+    --nav-transparent: #789ac4;
     --selectoren-background: #2c7fba2d;
     --card-shadow: #1533492f;
     --headings: #003b66;
     --mini-icons: #00518a;
-    --card-border-color: #326b4926;
+    --card-border-color: #15334924;
+    --icon-color: #00518a;
+    --svg-color: #00518a;
 }
 
 
@@ -71,7 +164,8 @@ body {
     top: 0;
     z-index: 1000;
     height: 60px;
-    background-color: var(--nav-transparent);
+    background: var(--nav-transparent);
+    background: linear-gradient(135deg, rgba(120, 154, 196, 1) 0%, rgba(21, 51, 73, 1) 99%);
 }
 
 .nav-container {
@@ -85,6 +179,7 @@ body {
     height: 60px;
     margin: 0;
     padding: 0;
+    border-radius: 20px;
 }
 
 .nav-logo>img {
@@ -113,31 +208,22 @@ body {
 
 .nav-card>a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
 }
 
 #active {
     /* border-bottom: 2px solid #153349; */
-    background-color: #269ef4;
+    /* background-color: #269ef4; */
+    background-color: #1f6394;
     border-radius: 16px;
-    box-shadow: 0px 0px 20px #269ef4;
+    /* box-shadow: 0px 0px 20px #269ef4; */
+    box-shadow: 0px 0px 20px #1b3b56;
 
 }
 
 /* *=== Media Queries === */
 
-@media (max-width: 855px) {
-    .nav-logo {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-logo>img {
-        height: 40px;
-    }
-}
-
-@media (max-width: 780px) {
+@media (max-width: 966px) {
     .nav-leiste {
         height: 120px;
     }
@@ -148,17 +234,18 @@ body {
     }
 }
 
-@media (max-width: 604px) {
+@media (max-width: 715px) {
     .nav-container>ul {
         gap: 1rem;
     }
 }
 
-@media (max-width: 541px) {
+
+@media (max-width: 682px) {
     .nav-leiste {
         position: static;
         z-index: 1000;
-        height: 360px;
+        height: 420px;
         background-color: var(--nav-transparent);
     }
 
@@ -349,8 +436,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 350px;
+    min-height: 300px;
     padding: 1rem;
+    background-color: var(--selectoren-background);
     border: 1px solid var(--card-border-color);
     border-radius: 16px;
     box-shadow: 4px 16px 10px var(--card-shadow);
@@ -432,9 +520,9 @@ body {
     width: 200px;
     padding: 1rem;
     background-color: #fff;
-    border: 1px solid #326b4926;
-    border-radius: 16px;
+    border: 1px solid var(--card-border-color);
     box-shadow: 4px 16px 10px var(--card-shadow);
+    border-radius: 16px;
     margin: 0 auto;
 }
 
@@ -564,6 +652,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    align-items: center;
     background-color: var(--selectoren-background);
     padding: 1rem;
     border-radius: 16px;
@@ -714,13 +803,15 @@ body {
     #ueber-mich-staerken-container {
         grid-template-columns: repeat(2, 1fr);
         background-color: white;
-
+        gap: 2rem;
     }
 
     .ueber-mich-staerken-card {
         width: 300px;
         background-color: var(--selectoren-background);
         border-radius: 16px;
+        border: 1px solid var(--card-border-color);
+        box-shadow: 4px 16px 10px var(--card-shadow);
     }
 
     .ueber-mich-staerken-content {
@@ -728,17 +819,18 @@ body {
     }
 }
 
-@media (max-width: 666px) {
+@media (max-width: 682px) {
     #ueber-mich-staerken-container {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-@media (max-width: 666px) {
+@media (max-width: 682px) {
     #ueber-mich-content {
         display: flex;
         flex-direction: column;
         background-color: #fff;
+        gap: 2rem;
     }
 
     .ueber-mich-card {
@@ -749,6 +841,8 @@ body {
         width: 50%;
         margin: 0 auto;
         border: 0;
+        border: 1px solid var(--card-border-color);
+        box-shadow: 4px 16px 10px var(--card-shadow);
     }
 }
 
@@ -846,7 +940,7 @@ body {
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 682px) {
 
     .footer-kontakt-card,
     .footer-links-card,
@@ -856,7 +950,7 @@ body {
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 682px) {
     .footer-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1138,6 +1232,11 @@ body {
     text-align: center;
 }
 
+#how-i-works-heading>h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
 #how-i-works-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1236,6 +1335,7 @@ body {
     gap: .7rem;
     width: 300px;
     padding: .1rem 2rem;
+    background-color: #fff;
     border-radius: 16px;
     border: 1px solid var(--card-border-color);
     border-radius: 16px;
@@ -1312,6 +1412,7 @@ body {
 #leistungen-page-header-img>img {
     height: 536px;
 }
+
 
 @media (max-width: 1293px) {
     #leistungen-page-header-card>div>h1 {
@@ -1450,10 +1551,186 @@ body {
 
 @media (max-width: 470px) {
     .meine-leistungen-card {
+        flex-direction: column;
+    }
+
+    .meine-leistungen-content {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* *=========================================================================== */
+
+/* *========== Projekt-Page ========== */
+
+#projekte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--selectoren-background);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+#projekte-heading {
+    width: 50%;
+}
+
+#projekte-heading>h2 {
+    margin: 0;
+}
+
+/* *===================================================================================== */
+
+/* *========= Preise ========== */
+
+#preise {
+    margin: 2rem 0;
+}
+
+#preise-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 95%;
+    margin: 0 auto 2rem;
+}
+
+#preise-heading>h2 {
+    margin: 0 0 2rem;
+}
+
+#preise-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.preise-slide {
+    display: flex;
+}
+
+.preise-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border: 1px solid #00000016;
+    border-radius: 16px;
+    box-shadow: 4px 16px 10px var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#preise-card-beliebt {
+    border: 2px solid var(--icon-color);
+    position: relative;
+    bottom: 2rem;
+}
+
+.preise-liste {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+}
+
+.preise-liste>li {
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: .65rem;
+    line-height: 1.15;
+    font-size: .95rem;
+}
+
+.preise-cost>h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.preise-cost>p {
+    margin-top: .5rem;
+}
+
+.preis {
+    display: flex;
     flex-direction: column;
 }
-.meine-leistungen-content {
-    text-align: center;
-    width: 100%;
+
+.preis>data {
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin-bottom: .2rem;
 }
+
+.preise-card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 20px 30px var(--card-shadow);
+}
+
+#preis-beliebt {
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    bottom: 44px;
+    width: 5rem;
+    background-color: var(--icon-color);
+    border-radius: 16px;
+}
+
+#preis-beliebt>span {
+    color: #FFF;
+}
+
+@media (max-width: 1000px) {
+    #preise-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 3rem 0 2rem;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    #preise-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .preise-slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+
+    .preise-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 2rem;
+    }
+
+    #preise-card-beliebt {
+        bottom: 0;
+    }
 }
